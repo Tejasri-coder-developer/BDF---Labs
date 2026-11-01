@@ -6,6 +6,15 @@
 
 ## Live Deployment
 
+https://adbms-lab-02.onrender.com/
+
+## Test Endpoints
+
+GET All Books: https://adbms-lab-02.onrender.com/books/
+
+GET Book by ID: https://adbms-lab-02.onrender.com/books/1/
+
+## The API is deployed and tested successfully on Render.
 
 ## How to run
 
