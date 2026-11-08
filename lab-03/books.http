@@ -1,0 +1,96 @@
+### Lab 3 - Books REST API requests
+### Start your server before running these requests.
+### VS Code extension: REST Client
+### Local base URL
+@baseUrl = http://localhost:3000
+
+### 1. Get all books
+GET http://localhost:3000/books/
+
+### 2. Get one book (change the ID if needed)
+GET http://localhost:3000/books/3/
+
+### 3. Search books by title
+GET http://localhost:3000/books/?search_q=Atomic
+
+### 4. Sort books by price in ascending order
+GET http://localhost:3000/books/?order_by=price&order=ASC
+
+### 5. Sort books by title in descending order
+GET http://localhost:3000/books/?order_by=title&order=DESC
+
+### 6. Limit the number of books returned
+GET http://localhost:3000/books/?limit=5
+
+### 7. Pagination - skip the first 7 books and return the next 5
+GET http://localhost:3000/books/?limit=5&offset=7
+
+### 8. Filter books by minimum price
+GET http://localhost:3000/books/?min_price=100
+
+### 9. Filter books by maximum price
+GET http://localhost:3000/books/?max_price=500
+
+### 10. Filter books by a price range
+GET http://localhost:3000/books/?min_price=100&max_price=500
+
+### 11. Combine search, sorting, pagination, and price filters
+GET http://localhost:3000/books/?search_q=The&order_by=title&order=ASC&min_price=100&max_price=500&limit=5&offset=0
+
+### 12. Add a new book (successful POST; expected status: 201)
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "The Pragmatic Programmer",
+  "author": "Andrew Hunt",
+  "price": 450,
+  "pages": 320
+}
+
+### Check here for added books
+GET http://localhost:3000/books/?limit=20
+
+
+
+
+### 13. Add a book with missing title (validation test; expected status: 400)
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "author": "Test Author",
+  "price": 200,
+  "pages": 150
+}
+
+### 14. Add a book with non-numeric price (validation test; expected status: 400)
+POST http://localhost:3000/books/
+Content-Type: application/json
+
+{
+  "title": "Invalid Price Test",
+  "author": "Test Author",
+  "price": "two hundred",
+  "pages": 150
+}
+
+### 15. Update a book (change the ID if needed; expected status: 200)
+PUT http://localhost:3000/books/1/
+Content-Type: application/json
+
+{
+  "title": "Updated Book Title",
+  "author": "Updated Author",
+  "price": 350,
+  "pages": 250
+}
+
+### 16. Request a book ID that does not exist (expected status: 404)
+GET http://localhost:3000/books/999999/
+
+### 17. Delete a book (change the ID to a test book; expected status: 200)
+DELETE http://localhost:3000/books/11/
+
+### 18. Delete a book ID that does not exist (expected status: 404)
+DELETE http://localhost:3000/books/999999/
