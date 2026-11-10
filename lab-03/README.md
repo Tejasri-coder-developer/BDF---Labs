@@ -5,8 +5,17 @@
 **Section:** CSE - FSD - 2B (309)
 **Lab Number:** 3
 
-## Live link
-Not deployed - because I got some error in render because of some login of git Hub and something sir.
+
+
+## Live link - https://bdf-lab-03-zimg.onrender.com/
+
+## Test here for endpints
+
+## GET All Books: https://bdf-lab-03-zimg.onrender.com/books/
+
+## GET Book by ID: https://bdf-lab-03-zimg.onrender.com/books/1/
+
+## The API is deployed and tested successfully on Render.
 
 
 ## A Main Note:  In Lab 2 I have removed the book of id 5 so that is not available here in lab 3.
